@@ -86,7 +86,7 @@ function LeadCard({ record, archived, pinned, onViewConversation, onArchive, onP
         <div className="card-actions card-toggle-actions">
           <button className={`card-toggle archive-button ${archived ? "restore-button" : ""}`} onClick={() => onArchive(record)}>{archived ? "Restore" : "Archive"}</button>
           <button className={`card-toggle pin-button ${pinned ? "pinned" : ""}`} onClick={() => onPin(record)}>{pinned ? "Unpin" : "Pin"}</button>
-          <button className="card-toggle conversation-button" onClick={() => onViewConversation(record)}>Initial Conversation</button>
+          <button className="card-toggle conversation-button" onClick={() => onViewConversation(record)}>Initial Outreach</button>
           {record.profileUrl ? (
             <a className="card-toggle linkedin-link" href={record.profileUrl} target="_blank" rel="noreferrer">
               Open LinkedIn
@@ -295,7 +295,7 @@ export default function Home() {
           <section className="conversation-panel" role="dialog" aria-modal="true" aria-labelledby="conversation-title" onMouseDown={(event) => event.stopPropagation()}>
             <div className="panel-header">
               <div>
-                <p className="eyebrow">Spreadsheet conversation</p>
+                <p className="eyebrow">Initial Conversation</p>
                 <h2 id="conversation-title">{selectedRecord.fullName}</h2>
                 <p>{[selectedRecord.title, selectedRecord.company, selectedRecord.location].filter(Boolean).join(" · ") || "Profile details unavailable"}</p>
               </div>
@@ -305,7 +305,6 @@ export default function Home() {
             <div className="panel-footer">
               <span>{formatActivityTime(selectedRecord.timestamp)}</span>
               <div className="card-actions">
-                <button className="archive-button" onClick={() => toggleArchive(selectedRecord)}>{archivedKeys.includes(archiveKey(selectedRecord)) ? "Restore prospect" : "Archive prospect"}</button>
                 {selectedRecord.profileUrl ? <a className="linkedin-link" href={selectedRecord.profileUrl} target="_blank" rel="noreferrer">Open LinkedIn</a> : null}
               </div>
             </div>
