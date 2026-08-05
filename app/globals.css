@@ -699,4 +699,16 @@ h2 {
     text-overflow: ellipsis;
   }
   .card-toggle-actions { min-width: 0; }
-}
+  .card-toggle-actions {
+    min-width: 0;
+    gap: 5px;
+  }
+
+  .card-toggle {
+    min-width: 0;
+    min-height: 46px;
+    padding: 6px 3px;
+    font-size: 12px;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
