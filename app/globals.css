@@ -653,12 +653,50 @@ h2 {
 }
 
 @media (max-width: 620px) {
-  .dashboard-shell { width: min(100% - 28px, 1440px); padding-top: 32px; }
-  h1 { font-size: 44px; }
-  .summary-row, .lead-grid, .activity-list { grid-template-columns: 1fr; }
-  .search-field, .search-field input { width: 100%; }
+  .dashboard-shell {
+    width: calc(100% - 28px);
+    max-width: none;
+    padding-top: 24px;
+  }
+
+  .masthead {
+    width: 100%;
+    gap: 22px;
+    padding: 22px;
+  }
+
+  .brand-lockup {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .brand-mark {
+    width: 96px;
+    height: 72px;
+  }
+
+  h1 { font-size: clamp(40px, 12vw, 52px); }
+
+  .refresh-block {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .section-heading { width: 100%; }
+  .summary-row, .lead-grid, .activity-list { grid-template-columns: minmax(0, 1fr); }
+  .search-field { display: block; width: 100%; }
+  .search-field input { width: 100%; }
   .segmented { width: 100%; }
   .segmented button { flex: 1; }
   .filter-field select { max-width: 180px; }
   .subsection-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
+
+  .lead-card { min-width: 0; padding: 16px; }
+  .lead-heading > div { min-width: 0; }
+  .location {
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-toggle-actions { min-width: 0; }
 }
