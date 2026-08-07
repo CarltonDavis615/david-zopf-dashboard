@@ -403,6 +403,7 @@ h2 {
 
 .lead-title { margin-bottom: 5px; }
 .contact-line { margin-bottom: 3px; }
+.contact-label { color: var(--ink); font-weight: 700; }
 
 .location {
   flex: 0 0 auto;
@@ -698,12 +699,10 @@ h2 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .card-toggle-actions { min-width: 0; }
   .card-toggle-actions {
     min-width: 0;
     gap: 5px;
   }
-
   .card-toggle {
     min-width: 0;
     min-height: 46px;
@@ -712,3 +711,4 @@ h2 {
     line-height: 1.1;
     overflow-wrap: anywhere;
   }
+}
