@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import {
   formatActivityTime,
   formatDateOnly,
+  formatPhone,
   latestVideoSent,
   normalizeRows,
   parseCsv,
@@ -71,8 +72,8 @@ function LeadCard({ record, archived, pinned, onViewConversation, onArchive, onP
           <p className="lead-title">
             {[record.title, record.company].filter(Boolean).join(" at ") || "Profile details unavailable"}
           </p>
-          <p className="contact-line">{record.phone || "Phone unavailable"}</p>
-          <p className="contact-line">{record.email || "Email unavailable"}</p>
+          <p className="contact-line"><span className="contact-label">email:</span> {record.email || "Email unavailable"}</p>
+          <p className="contact-line"><span className="contact-label">tel:</span> {formatPhone(record.phone) || "Phone unavailable"}</p>
         </div>
         {record.location ? <span className="location">{simplifyLocation(record.location)}</span> : null}
       </div>
